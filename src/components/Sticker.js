@@ -23,7 +23,6 @@ function Sticker({ sticker, deleteSticker, onSaveChanges }) {
 
   function getStickerContainerStyle() {
     const { top, left } = item;
-    console.log(item);
     return {
       ...StickerContainerStyle,
       top: top,

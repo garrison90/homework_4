@@ -44,16 +44,6 @@ function Board() {
       );
   }
 
-  //function editSticker(item) {
-  //  onSaveChanges();
-  //}
-  //
-  //function dragSticker(item) {
-  //  onSaveChanges();
-  //}
-
-  console.log(stickers);
-
   return (
     <div style={boardContainer}>
       <div style={boardNav}>
@@ -90,6 +80,7 @@ const boardContainer = {
 
 const boardNav = {
   backgroundColor: "blue",
+  width: "100vw",
   height: "70px",
   display: "flex",
   justifyContent: "space-between",
