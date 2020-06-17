@@ -34,8 +34,7 @@ function Board() {
     });
   }
 
-  function editSticker(item) {
-    console.log("item", item);
+  function onSaveChanges(item) {
     api
       .put(item.id, item)
       .then(() =>
@@ -45,15 +44,13 @@ function Board() {
       );
   }
 
-  function dragSticker(item) {
-    api
-      .put(item.id, item)
-      .then(() =>
-        setStickers(
-          stickers.map((sticker) => (sticker.id === item.id ? item : sticker))
-        )
-      );
-  }
+  //function editSticker(item) {
+  //  onSaveChanges();
+  //}
+  //
+  //function dragSticker(item) {
+  //  onSaveChanges();
+  //}
 
   console.log(stickers);
 
@@ -72,8 +69,7 @@ function Board() {
               key={sticker.id}
               sticker={sticker}
               deleteSticker={deleteSticker}
-              editSticker={editSticker}
-              dragSticker={dragSticker}
+              onSaveChanges={onSaveChanges}
             />
           );
         })}

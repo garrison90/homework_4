@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 
-function Sticker({ sticker, deleteSticker, editSticker, dragSticker }) {
+function Sticker({ sticker, deleteSticker, onSaveChanges }) {
   const [item, setItem] = useState(sticker);
-  console.log(item);
 
   function handleTextarea(e) {
     setItem({ ...item, [e.target.name]: e.target.value });
   }
 
   function submitTextarea() {
-    editSticker(item);
+    onSaveChanges(item);
   }
 
   function dragEnd(e) {
@@ -19,7 +18,7 @@ function Sticker({ sticker, deleteSticker, editSticker, dragSticker }) {
       left: e.clientX,
     };
     setItem(dragItem);
-    dragSticker(dragItem);
+    onSaveChanges(dragItem);
   }
 
   function getStickerContainerStyle() {
@@ -63,7 +62,7 @@ const StickerContainerStyle = {
   overflow: "hidden",
   backgroundColor: "rgb(246, 229, 228)",
   margin: "15px",
-  zIndex: "1",
+  zIndex: "0",
 };
 
 const stickerButton = {
