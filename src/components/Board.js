@@ -3,7 +3,7 @@ import api from "../api";
 import Sticker from "./Sticker";
 
 const initialSticker = {
-  id: Date.now(),
+  //id: Date.now(),
   text: "",
   top: 100,
   left: 50,
@@ -80,7 +80,6 @@ const boardContainer = {
 
 const boardNav = {
   backgroundColor: "blue",
-  width: "100vw",
   height: "70px",
   display: "flex",
   justifyContent: "space-between",
